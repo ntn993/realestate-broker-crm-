@@ -1,0 +1,69 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Contact {
+  id        String   @id @default(cuid())
+  name      String
+  email     String?
+  phone     String?
+  type      String   @default("Buyer")
+  status    String   @default("New")
+  source    String?
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  deals     Deal[]
+  tasks     Task[]
+}
+
+model Property {
+  id          String   @id @default(cuid())
+  title       String
+  address     String
+  city        String
+  state       String?
+  zip         String?
+  price       Decimal
+  beds        Int?
+  baths       Float?
+  area        Int?
+  status      String   @default("Available")
+  type        String   @default("Residential")
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  deals       Deal[]
+}
+
+model Deal {
+  id         String    @id @default(cuid())
+  title      String
+  stage      String    @default("Lead")
+  value      Decimal
+  probability Int      @default(20)
+  closeDate  DateTime?
+  contactId  String?
+  propertyId String?
+  contact    Contact?  @relation(fields: [contactId], references: [id])
+  property   Property? @relation(fields: [propertyId], references: [id])
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  dueDate     DateTime
+  completed   Boolean   @default(false)
+  priority    String    @default("Medium")
+  contactId   String?
+  contact     Contact?  @relation(fields: [contactId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}

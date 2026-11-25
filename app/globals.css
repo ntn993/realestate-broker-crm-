@@ -1,0 +1,35 @@
+:root { --ink:#17233c; --muted:#788197; --navy:#17213a; --cream:#f7f6f2; --line:#ebeae5; --green:#6e9d87; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--cream); color:var(--ink); font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.app-shell { min-height:100vh; display:grid; grid-template-columns:220px 1fr; }
+.sidebar { background:var(--navy); color:#fff; padding:28px 18px; display:flex; flex-direction:column; }
+.brand { height:56px; display:flex; align-items:center; gap:10px; padding:0 10px; font-size:13px; letter-spacing:4px; font-weight:700; }
+.brand-mark { width:34px; height:34px; border:1px solid #aeb8c9; border-radius:50%; display:grid; place-items:center; font-family:Georgia,serif; font-size:18px; }
+nav { display:flex; flex-direction:column; gap:6px; margin-top:34px; }
+.nav-item { color:#abb5c7; text-decoration:none; height:44px; border-radius:8px; display:flex; align-items:center; gap:12px; padding:0 13px; font-size:14px; }
+.nav-item.active { background:#26304a; color:#fff; }
+.settings { margin-top:auto; }
+.content { padding:38px 48px 48px; min-width:0; }
+.topbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:32px; }
+.eyebrow { color:#989faa; font-size:10px; letter-spacing:1.5px; font-weight:700; margin:0 0 8px; }
+h1,h2 { margin:0; font-family:Georgia,"Times New Roman",serif; font-weight:500; }
+h1 { font-size:34px; } h2 { font-size:22px; }
+.avatar { width:42px; height:42px; border:0; border-radius:50%; background:#dce5df; color:#53665d; font-weight:700; }
+.stats { display:grid; grid-template-columns:repeat(4,1fr); background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:18px; }
+.stats article { padding:22px 24px; border-right:1px solid var(--line); display:flex; flex-direction:column; }
+.stats article:last-child { border:0; }
+.stats p { color:var(--muted); margin:0 0 10px; font-size:13px; }
+.stats strong { font-family:Georgia,serif; font-size:28px; font-weight:500; margin-bottom:7px; }
+.stats span { color:#989faa; font-size:11px; } .stats .positive { color:#668f79; } .stats .warning { color:#b58255; }
+.grid { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(280px,.75fr); gap:18px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:12px; overflow:hidden; }
+.panel-heading { height:82px; padding:20px 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
+.panel-heading button { border:0; background:transparent; color:#788197; font-size:12px; }
+.deal-row { min-height:78px; display:grid; grid-template-columns:42px minmax(150px,1fr) 150px 20px; gap:12px; align-items:center; padding:12px 24px; border-bottom:1px solid #f0efeb; }
+.deal-avatar { width:38px; height:38px; border-radius:50%; background:#edf1ed; display:grid; place-items:center; color:#617568; }
+.deal-name,.deal-value { display:flex; flex-direction:column; gap:6px; }.deal-name strong,.deal-value strong { font-size:13px; }.deal-name span { color:#989faa; font-size:11px; }.deal-value { align-items:flex-end; }
+.progress { width:100px; height:3px; background:#eeede8; border-radius:4px; overflow:hidden; }.progress i { display:block; height:100%; background:#789987; }
+.follow-ups { min-height:350px; }.icon-button { width:30px; height:30px; border:1px solid var(--line)!important; border-radius:50%!important; }
+.task { display:flex; gap:14px; align-items:center; padding:18px 24px; border-bottom:1px solid #f0efeb; }.task div { display:flex; flex-direction:column; gap:6px; }.task strong { font-size:13px; }.task span:last-child { color:#989faa; font-size:11px; }.check { width:18px; height:18px; border:1px solid #d9dcd8; border-radius:50%; }.check.high { border-color:#b58255; }
+@media (max-width:1050px) { .stats { grid-template-columns:repeat(2,1fr); }.stats article:nth-child(2) { border-right:0; }.grid { grid-template-columns:1fr; } }
+@media (max-width:760px) { .app-shell { grid-template-columns:72px 1fr; }.sidebar { padding:20px 10px; }.brand span,.nav-item { font-size:0; }.nav-item { justify-content:center; }.brand { padding:0; justify-content:center; }.content { padding:28px 20px; }.stats { grid-template-columns:1fr 1fr; }.deal-row { grid-template-columns:42px 1fr 20px; }.deal-value { display:none; } }
