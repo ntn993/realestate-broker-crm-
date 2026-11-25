@@ -8,18 +8,35 @@ datasource db {
 }
 
 model Contact {
-  id        String   @id @default(cuid())
-  name      String
-  email     String?
-  phone     String?
-  type      String   @default("Buyer")
-  status    String   @default("New")
-  source    String?
-  notes     String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  deals     Deal[]
-  tasks     Task[]
+  id                    String     @id @default(cuid())
+  name                  String
+  email                 String?
+  phone                 String?
+  type                  String     @default("Buyer")
+  status                String     @default("New")
+  source                String?
+  sourceCampaign        String?
+  externalId            String?
+  notes                 String?
+  budgetMin             Decimal?
+  budgetMax             Decimal?
+  preferredPropertyType String?
+  preferredLocation     String?
+  assignedTo            String?
+  consentToContact      Boolean    @default(false)
+  leadScore             Int        @default(0)
+  lastContactedAt       DateTime?
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+  deals                 Deal[]
+  tasks                 Task[]
+  activities            Activity[]
+
+  @@unique([source, externalId])
+  @@index([status, updatedAt])
+  @@index([source, createdAt])
+  @@index([phone])
+  @@index([email])
 }
 
 model Property {
@@ -34,36 +51,55 @@ model Property {
   baths       Float?
   area        Int?
   status      String   @default("Available")
-  type        String   @default("Residential")
+  type        String   @default("Flat / Apartment")
   description String?
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
   deals       Deal[]
+
+  @@index([city, status, type])
 }
 
 model Deal {
-  id         String    @id @default(cuid())
-  title      String
-  stage      String    @default("Lead")
-  value      Decimal
-  probability Int      @default(20)
-  closeDate  DateTime?
-  contactId  String?
-  propertyId String?
-  contact    Contact?  @relation(fields: [contactId], references: [id])
-  property   Property? @relation(fields: [propertyId], references: [id])
-  createdAt  DateTime  @default(now())
-  updatedAt  DateTime  @updatedAt
+  id          String    @id @default(cuid())
+  title       String
+  stage       String    @default("Lead")
+  value       Decimal
+  probability Int       @default(20)
+  closeDate   DateTime?
+  contactId   String?
+  propertyId  String?
+  contact     Contact?  @relation(fields: [contactId], references: [id])
+  property    Property? @relation(fields: [propertyId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([stage, updatedAt])
 }
 
 model Task {
-  id          String    @id @default(cuid())
-  title       String
-  dueDate     DateTime
-  completed   Boolean   @default(false)
-  priority    String    @default("Medium")
-  contactId   String?
-  contact     Contact?  @relation(fields: [contactId], references: [id])
-  createdAt   DateTime  @default(now())
-  updatedAt   DateTime  @updatedAt
+  id        String   @id @default(cuid())
+  title     String
+  dueDate   DateTime
+  completed Boolean  @default(false)
+  priority  String   @default("Medium")
+  contactId String?
+  contact   Contact? @relation(fields: [contactId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([completed, dueDate])
+}
+
+model Activity {
+  id        String   @id @default(cuid())
+  kind      String
+  channel   String?
+  summary   String
+  details   String?
+  contactId String
+  contact   Contact @relation(fields: [contactId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@index([contactId, createdAt])
 }
