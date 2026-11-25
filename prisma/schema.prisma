@@ -7,6 +7,46 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum UserRole {
+  SUPER_ADMIN
+  ADMIN
+  SALES_MANAGER
+  SALES_EXECUTIVE
+  TELECALLER
+  MARKETING
+  BACK_OFFICE
+  ACCOUNTS
+  DOCUMENTATION
+  PROPERTY_MANAGER
+  CRM_SUPPORT
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  phone     String?
+  password  String
+  role      UserRole @default(SALES_EXECUTIVE)
+  branchId  String?
+  branch    Branch?  @relation(fields: [branchId], references: [id])
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  assignedContacts Contact[] @relation("AssignedContacts")
+  activityLogs     AuditLog[]
+}
+
+model Branch {
+  id        String @id @default(cuid())
+  name      String
+  city      String
+  state     String
+  address   String?
+  users     User[]
+  createdAt DateTime @default(now())
+}
+
 model Contact {
   id                    String     @id @default(cuid())
   name                  String
@@ -22,7 +62,8 @@ model Contact {
   budgetMax             Decimal?
   preferredPropertyType String?
   preferredLocation     String?
-  assignedTo            String?
+  assignedToId          String?
+  assignedTo            User?      @relation("AssignedContacts", fields: [assignedToId], references: [id])
   consentToContact      Boolean    @default(false)
   leadScore             Int        @default(0)
   lastContactedAt       DateTime?
@@ -102,4 +143,17 @@ model Activity {
   createdAt DateTime @default(now())
 
   @@index([contactId, createdAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  action    String
+  entity    String
+  entityId  String?
+  details   String?
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+
+  @@index([entity, createdAt])
 }
