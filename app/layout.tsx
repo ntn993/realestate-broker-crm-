@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Haven CRM',
-  description: 'Real estate customer relationship management',
+  title: 'Gharana Realty | Client & Property CRM',
+  description: 'A thoughtful real-estate CRM for Indian property professionals.',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en-IN">
       <body>{children}</body>
     </html>
   )
