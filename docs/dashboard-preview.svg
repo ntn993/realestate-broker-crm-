@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <rect width="1400" height="900" fill="#f7f6f2"/>
+  <rect width="220" height="900" fill="#17213a"/>
+  <circle cx="66" cy="72" r="20" fill="none" stroke="#aeb8c9" stroke-width="1"/><text x="66" y="80" text-anchor="middle" fill="#fff" font-family="Georgia" font-size="22">H</text>
+  <text x="96" y="77" fill="#fff" font-family="Arial" font-weight="700" font-size="13" letter-spacing="4">HAVEN</text>
+  <g font-family="Arial" font-size="15"><rect x="18" y="130" width="184" height="46" rx="8" fill="#26304a"/><text x="62" y="159" fill="#fff">Overview</text><text x="62" y="211" fill="#abb5c7">Contacts</text><text x="62" y="263" fill="#abb5c7">Properties</text><text x="62" y="315" fill="#abb5c7">Deals</text><text x="62" y="367" fill="#abb5c7">Appointments</text></g>
+  <text x="62" y="846" fill="#abb5c7" font-family="Arial" font-size="15">Settings</text>
+  <text x="268" y="72" fill="#989faa" font-family="Arial" font-size="10" font-weight="700" letter-spacing="1.5">TUESDAY, NOVEMBER 25</text>
+  <text x="268" y="118" fill="#17233c" font-family="Georgia" font-size="34">Good morning, Alex</text>
+  <circle cx="1318" cy="78" r="26" fill="#dce5df"/><text x="1318" y="85" text-anchor="middle" fill="#53665d" font-family="Arial" font-size="14" font-weight="700">AJ</text>
+
+  <g font-family="Arial">
+    <rect x="268" y="158" width="1064" height="150" rx="12" fill="#fff" stroke="#ebeae5"/>
+    <g stroke="#ebeae5"><line x1="534" y1="158" x2="534" y2="308"/><line x1="800" y1="158" x2="800" y2="308"/><line x1="1066" y1="158" x2="1066" y2="308"/></g>
+    <g fill="#788197" font-size="13"><text x="292" y="198">Active leads</text><text x="558" y="198">Pipeline value</text><text x="824" y="198">Properties</text><text x="1090" y="198">Tasks due</text></g>
+    <g fill="#17233c" font-family="Georgia" font-size="30"><text x="292" y="246">3</text><text x="558" y="246">$1.93M</text><text x="824" y="246">1</text><text x="1090" y="246">3</text></g>
+    <g fill="#668f79" font-size="11"><text x="292" y="278">+12% this month</text><text x="558" y="278">+8.4% this month</text></g><text x="824" y="278" fill="#989faa" font-size="11" font-family="Arial">Across 3 markets</text><text x="1090" y="278" fill="#b58255" font-size="11" font-family="Arial">2 require attention</text>
+
+    <rect x="268" y="326" width="700" height="500" rx="12" fill="#fff" stroke="#ebeae5"/><rect x="986" y="326" width="346" height="500" rx="12" fill="#fff" stroke="#ebeae5"/>
+    <text x="292" y="358" fill="#989faa" font-size="10" font-weight="700" letter-spacing="1.5">PERFORMANCE</text><text x="292" y="390" fill="#17233c" font-family="Georgia" font-size="22">Sales pipeline</text><text x="890" y="390" fill="#788197" font-size="12">View report</text>
+    <text x="1010" y="358" fill="#989faa" font-size="10" font-weight="700" letter-spacing="1.5">TODAY</text><text x="1010" y="390" fill="#17233c" font-family="Georgia" font-size="22">Follow-ups</text>
+    <line x1="268" y1="414" x2="968" y2="414" stroke="#ebeae5"/><line x1="986" y1="414" x2="1332" y2="414" stroke="#ebeae5"/>
+
+    <g><circle cx="316" cy="462" r="20" fill="#edf1ed"/><text x="316" y="469" text-anchor="middle" fill="#617568" font-size="13">S</text><text x="350" y="457" fill="#17233c" font-size="13" font-weight="700">Carter — Willow Avenue</text><text x="350" y="477" fill="#989faa" font-size="11">Sophia Carter · Proposal</text><text x="850" y="462" text-anchor="end" fill="#17233c" font-size="13" font-weight="700">$875,000</text><rect x="800" y="480" width="68" height="3" rx="2" fill="#eeede8"/><rect x="800" y="480" width="48" height="3" rx="2" fill="#789987"/></g>
+    <line x1="292" y1="512" x2="944" y2="512" stroke="#f0efeb"/>
+    <g><circle cx="316" cy="560" r="20" fill="#edf1ed"/><text x="316" y="567" text-anchor="middle" fill="#617568" font-size="13">M</text><text x="350" y="555" fill="#17233c" font-size="13" font-weight="700">Johnson Home Sale</text><text x="350" y="575" fill="#989faa" font-size="11">Marcus Johnson · Negotiation</text><text x="850" y="560" text-anchor="end" fill="#17233c" font-size="13" font-weight="700">$642,000</text><rect x="800" y="578" width="68" height="3" rx="2" fill="#eeede8"/><rect x="800" y="578" width="58" height="3" rx="2" fill="#789987"/></g>
+    <line x1="292" y1="610" x2="944" y2="610" stroke="#f0efeb"/>
+    <g><circle cx="316" cy="658" r="20" fill="#edf1ed"/><text x="316" y="665" text-anchor="middle" fill="#617568" font-size="13">O</text><text x="350" y="653" fill="#17233c" font-size="13" font-weight="700">Davis First-Time Purchase</text><text x="350" y="673" fill="#989faa" font-size="11">Olivia Davis · Lead</text><text x="850" y="658" text-anchor="end" fill="#17233c" font-size="13" font-weight="700">$410,000</text><rect x="800" y="676" width="68" height="3" rx="2" fill="#eeede8"/><rect x="800" y="676" width="14" height="3" rx="2" fill="#789987"/></g>
+
+    <g><circle cx="1018" cy="462" r="10" fill="#fff" stroke="#b58255"/><text x="1044" y="457" fill="#17233c" font-size="13" font-weight="700">Call Sophia Carter</text><text x="1044" y="477" fill="#989faa" font-size="11">Sophia Carter · High</text></g>
+    <line x1="1010" y1="512" x2="1308" y2="512" stroke="#f0efeb"/>
+    <g><circle cx="1018" cy="560" r="10" fill="#fff" stroke="#d9dcd8"/><text x="1044" y="555" fill="#17233c" font-size="13" font-weight="700">Send property brochure</text><text x="1044" y="575" fill="#989faa" font-size="11">Marcus Johnson · Medium</text></g>
+    <line x1="1010" y1="610" x2="1308" y2="610" stroke="#f0efeb"/>
+    <g><circle cx="1018" cy="658" r="10" fill="#fff" stroke="#b58255"/><text x="1044" y="653" fill="#17233c" font-size="13" font-weight="700">Schedule property viewing</text><text x="1044" y="673" fill="#989faa" font-size="11">Olivia Davis · High</text></g>
+  </g>
+</svg>

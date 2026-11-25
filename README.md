@@ -2,6 +2,10 @@
 
 A modern real-estate CRM for managing leads, contacts, properties, deals, follow-ups, and appointments.
 
+## Dashboard Preview
+
+![Haven CRM dashboard](docs/dashboard-preview.svg)
+
 ## Features
 
 - Pipeline and lead management
